@@ -1,0 +1,254 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Sophisticated SaaS Dark Theme - inspired by the template */
+  --background: oklch(0.05 0.01 240);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.08 0.015 240);
+  --card-foreground: oklch(0.95 0.01 240);
+  --popover: oklch(0.08 0.015 240);
+  --popover-foreground: oklch(0.95 0.01 240);
+
+  /* Purple/Blue gradient system like the template */
+  --primary: oklch(0.65 0.25 280);
+  --primary-foreground: oklch(0.05 0.01 240);
+  --secondary: oklch(0.55 0.2 260);
+  --secondary-foreground: oklch(0.95 0.01 240);
+
+  --muted: oklch(0.12 0.02 240);
+  --muted-foreground: oklch(0.65 0.05 240);
+  --accent: oklch(0.15 0.03 280);
+  --accent-foreground: oklch(0.85 0.08 280);
+  --destructive: oklch(0.65 0.25 15);
+  --destructive-foreground: oklch(0.95 0.01 240);
+  --border: oklch(0.18 0.03 240);
+  --input: oklch(0.12 0.02 240);
+  --ring: oklch(0.65 0.25 280);
+
+  /* Custom gradient and glow colors for the template effect */
+  --gradient-start: oklch(0.65 0.25 280);
+  --gradient-end: oklch(0.45 0.2 260);
+  --gradient-accent: oklch(0.75 0.3 300);
+  --glow-primary: oklch(0.65 0.25 280 / 0.5);
+  --glow-secondary: oklch(0.45 0.2 260 / 0.3);
+  --glass-bg: oklch(0.08 0.015 240 / 0.8);
+  --glass-border: oklch(0.2 0.03 240 / 0.3);
+
+  --chart-1: oklch(0.65 0.25 280);
+  --chart-2: oklch(0.55 0.2 260);
+  --chart-3: oklch(0.45 0.15 240);
+  --chart-4: oklch(0.75 0.22 300);
+  --chart-5: oklch(0.85 0.24 320);
+  --radius: 1rem;
+
+  --sidebar: oklch(0.08 0.015 240);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.65 0.25 280);
+  --sidebar-primary-foreground: oklch(0.05 0.01 240);
+  --sidebar-accent: oklch(0.15 0.03 280);
+  --sidebar-accent-foreground: oklch(0.85 0.08 280);
+  --sidebar-border: oklch(0.18 0.03 240);
+  --sidebar-ring: oklch(0.65 0.25 280);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom SaaS utility classes */
+  --color-gradient-start: var(--gradient-start);
+  --color-gradient-end: var(--gradient-end);
+  --color-gradient-accent: var(--gradient-accent);
+  --color-glow-primary: var(--glow-primary);
+  --color-glow-secondary: var(--glow-secondary);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Adding the dramatic background gradient like the template */
+    background: radial-gradient(ellipse at top, oklch(0.15 0.05 280) 0%, oklch(0.05 0.01 240) 50%);
+    min-height: 100vh;
+  }
+}
+
+/* Advanced SaaS utility classes for the template effect */
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  }
+
+  .gradient-radial {
+    background: radial-gradient(ellipse at center, var(--gradient-start), var(--gradient-end));
+  }
+
+  .glass-card {
+    background: rgba(8, 8, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card-intense {
+    background: rgba(8, 8, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-border {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+      linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) border-box;
+  }
+
+  .glow-border::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 50px var(--glow-primary), 0 0 100px var(--glow-secondary);
+  }
+
+  .shadow-glow-intense {
+    box-shadow: 0 0 80px var(--glow-primary), 0 0 160px var(--glow-secondary), 0 0 240px var(--glow-primary);
+  }
+
+  /* Enhanced glass effects for more unique appearance */
+  .glass-morphism {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-morphism-dark {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 60px -12px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Adding the orb effect from the template */
+  .orb-glow {
+    position: relative;
+    background: radial-gradient(circle, var(--gradient-start) 0%, var(--gradient-end) 70%, transparent 100%);
+    filter: blur(1px);
+  }
+
+  .orb-glow::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, var(--gradient-accent) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  /* Adding the dramatic lighting effects */
+  .spotlight {
+    background: radial-gradient(ellipse 800px 400px at 50% 0%, var(--glow-primary), transparent 70%);
+  }
+
+  .beam-effect {
+    background: linear-gradient(180deg, transparent 0%, var(--glow-secondary) 50%, transparent 100%);
+    filter: blur(2px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
