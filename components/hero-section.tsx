@@ -6,8 +6,8 @@ export function HeroSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-blue-600/10 blur-3xl rounded-full opacity-40" />
       
       <div className="relative max-w-5xl mx-auto text-center z-10">
-        <div className="inline-block mb-6 px-4 py-2 rounded-full bg-blue-600/20 border border-blue-500/30">
-          <span className="text-blue-300 text-sm font-semibold">For Agencies & Local Business Owners</span>
+        <div className="inline-block bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-8 uppercase tracking-wide">
+          ★ For Agencies & Local Business Owners
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight text-balance">
