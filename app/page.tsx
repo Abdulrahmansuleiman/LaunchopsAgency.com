@@ -6,7 +6,6 @@ import { TestimonialsSection } from "@/components/testimonials-section";
 import { FinalCTA } from "@/components/final-cta";
 import { ValueProposition } from "@/components/value-proposition";
 import { VideoSection } from "@/components/video-section";
-import { Book } from "lucide-react";
 
 export default function Home() {
   return (
