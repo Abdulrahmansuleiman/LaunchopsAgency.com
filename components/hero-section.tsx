@@ -1,26 +1,40 @@
 export function HeroSection() {
   return (
-    <section className="relative py-16 px-4 bg-black bg-gradient-radial from-blue-900/10 via-transparent to-transparent">
-      <div className="relative max-w-6xl mx-auto text-center">
-        <div className="mb-12">
-          <div className="inline-block bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-8 uppercase tracking-wide">
-            ★ For Marketing Consultants & Local Bussiness Owners.
-          </div>
+    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-background to-background" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-blue-600/10 blur-3xl rounded-full opacity-40" />
+      
+      <div className="relative max-w-5xl mx-auto text-center z-10">
+        <div className="inline-block bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-8 uppercase tracking-wide">
+          ★ For Agencies & Local Business Owners
+        </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
-            Here’s How We Will Help You With 30-100 Qualified Appointments Every
-            Month With <br /> Our{" "}
-            <span className="text-white">AI Automation System</span>.{" "}
-            <em className="text-white underline">Guaranteed.</em>
-          </h1>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight text-balance">
+          Stop Answering Unqualified Leads. Start Closing Deals.
+        </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-4xl mx-auto">
-            And the best part? We handle everything for you and you only pay
-            when those calls turn into clients.
-          </p>
+        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto text-balance leading-relaxed">
+          Our AI agent qualifies leads 24/7, books appointments, handles follow-ups, and transfers to your team—so you can focus on what matters: closing sales.
+        </p>
 
-          <div className="text-base text-gray-300 mb-6 font-medium">
-            Step 1 of 2: Watch Video
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors text-lg">
+            Schedule Free Demo
+          </button>
+          <button className="px-8 py-4 border border-white/20 text-white font-bold rounded-lg hover:border-white/40 transition-colors text-lg">
+            Learn How It Works
+          </button>
+        </div>
+
+        <div className="mt-16 pt-12 border-t border-white/10">
+          <p className="text-gray-400 text-sm mb-6">Trusted by agencies and local businesses</p>
+          <div className="flex flex-wrap justify-center gap-8 text-gray-500">
+            <span className="font-semibold">Solar Companies</span>
+            <span className="font-semibold">Construction</span>
+            <span className="font-semibold">Real Estate</span>
+            <span className="font-semibold">Gyms</span>
+            <span className="font-semibold">Marketing Agencies</span>
           </div>
         </div>
       </div>
